@@ -158,11 +158,13 @@ section {
   margin: 5px 0;
 }
 .card-front .content-card .product-price {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .card-front .content-card .product-price h2 {
-  float: left;
-  margin-right: 87px;
+  /* float: left; */
+  /* margin-right: 87px; */
   font-size: 20px;
   font-weight: 500;
   color: #F45050;
