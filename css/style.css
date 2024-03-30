@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  perspective: 700px;
+}
+ul {
+  list-style: none;
+}
+/* Start flip Product */
+label {
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+label:hover .container-card {
+  transform: rotateX(6deg);
+  box-shadow: 0 20px 20px rgba(50, 60, 60, 0.2);
+}
+input {
+  display: none;
+}
+:checked + .container-card {
+  transform:  rotateY(180deg);
+}
+label:hover :checked + .container-card {
+  transform: rotateY(175deg);
+  box-shadow: 0 20px 20px rgba(255 , 255, 255, 0.2);
+}
+/* End flip Product */
+section {
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 30px;
+}
+.container-card {
+  position: relative;
+  /* float: left; */
+  /* width: calc((100% - 100px) / 4); */
+  width: 301px;
+  height: 398px;
+  /* margin-right: 25px; */
+  /* margin-bottom: 25px; */
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+}
+/* .container-card:hover  {
+  transform: rotateY(180deg);
+} */
+.card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  box-shadow: 10px 8px 18px -6px;
+  backface-visibility: hidden;
+  z-index: 9;
+}
+.card-front .imgBx {
+  position: relative;
+  width: 100%;
+  height: 310px;
+  overflow: hidden;
+}
+.card-front .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 10px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  transition: .5s ease-in-out;
+
+}
+.card-front:hover .imgBx img {
+  transform: scale(1.4);
+}
+.card-front .action {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.card-front .action li {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #F0F0F0;
+  text-align: center;
+  line-height: 40px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition: transform 0.5s;
+  transform: translateX(60px);
+}
+.action li:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.action li:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.card-front:hover .action li {
+ transform: translateX(0);
+}
+.card-front .action li:hover {
+  background-color: #F45050;
+  color: #fff;
+}
+.card-front .action li span {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  white-space: nowrap;
+  transform: translate(-20px, -50%);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background-color: #F9D949;
+  color: #333;
+  cursor: none;
+  transition: 0.5s;
+  opacity: 0;
+}
+.card-front .action li:hover span {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+.card-front .action li span::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #F9D949;
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.card-front .content-card {
+  padding: 12px;
+}
+.card-front .product-title h3  {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 5px 0;
+}
+.card-front .content-card .product-price {
+  text-align: center;
+}
+.card-front .content-card .product-price h2 {
+  float: left;
+  margin-right: 87px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #F45050;
+}
+.card-front .content-card .product-price i {
+  color: #ffd513;
+  cursor: pointer;
+}
+.card-front .content-card .product-price .fa-gray {
+  color: #ccc;
+}
+.card-back {
+  position: absolute;
+  transform: rotateY(180deg);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  background-color: #fff;
+  padding: 12px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 10px 8px 18px -6px;
+}
+.card-back h4 {
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+}
+.card-back span {
+  font-size: 14px;
+  display: inline-block;
+  text-align: left;
+}
+.card-back a {
+  display: inline-block;
+    text-decoration: none;
+    color: #333;
+    background-color: #F9D949;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    margin-top: 15px;
+    transition: 0.5s;
+}
+.card-back a:hover {
+  background-color: #3C486B;
+  color: #fff;
+}
