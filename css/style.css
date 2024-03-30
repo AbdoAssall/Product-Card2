@@ -47,6 +47,13 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 25px;
 }
+.container-card {
+  position: relative;
+  width: 301px;
+  height: 398px;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+}
 /* .container-card:hover  {
   transform: rotateY(180deg);
 } */
